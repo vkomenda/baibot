@@ -86,6 +86,10 @@ pub async fn dispatch_controller(
             )
             .await
         }
+        ControllerType::Upsert => {
+            tracing::debug!("FIXME: upsert the file");
+            Ok(())
+        }
     };
 
     if let Err(e) = result {

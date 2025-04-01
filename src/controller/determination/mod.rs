@@ -52,6 +52,10 @@ pub fn determine_controller(
         MessagePayload::Reaction { .. } => {
             panic!("Handling reaction as first message in thread does not make sense")
         }
+        MessagePayload::File(file_message_content) => {
+            tracing::debug!(?file_message_content, "Received a file message");
+            ControllerType::Upsert
+        }
     }
 }
 

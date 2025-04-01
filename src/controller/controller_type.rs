@@ -24,4 +24,6 @@ pub enum ControllerType {
 
     ImageGeneration(String),
     StickerGeneration(String),
+
+    Upsert,
 }
