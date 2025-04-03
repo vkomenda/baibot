@@ -86,9 +86,14 @@ pub async fn dispatch_controller(
             )
             .await
         }
-        ControllerType::Upsert => {
-            tracing::debug!("FIXME: upsert the file");
-            Ok(())
+        ControllerType::Upsert(file_message_content) => {
+            super::memory::handle_file(
+                bot,
+                bot.matrix_link().clone(),
+                message_context,
+                file_message_content,
+            )
+            .await
         }
     };
 

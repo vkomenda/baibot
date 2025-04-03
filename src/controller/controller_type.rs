@@ -1,4 +1,6 @@
-#[derive(Debug, PartialEq)]
+use matrix_sdk::ruma::events::room::message::FileMessageEventContent;
+
+#[derive(Debug)]
 pub enum ControllerType {
     // Denotes that the message is to be ignored.
     Ignore,
@@ -25,5 +27,6 @@ pub enum ControllerType {
     ImageGeneration(String),
     StickerGeneration(String),
 
-    Upsert,
+    // Upsert a file into a vector database
+    Upsert(FileMessageEventContent),
 }

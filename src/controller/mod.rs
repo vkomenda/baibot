@@ -9,6 +9,7 @@ mod dispatching;
 pub mod help;
 pub mod image;
 pub mod join;
+pub mod memory;
 pub mod provider;
 pub mod reaction;
 pub mod usage;
